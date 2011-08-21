@@ -1,0 +1,26 @@
+motion_ja.vim - E,W,B,),(での移動を日本語向けにするためのスクリプト。
+
+Description:
+* 日本語文章上でのE,W,Bでの移動量を、e,w,bよりも大きくします。
+  句読点を区切りとみなして移動するようにします。
+  区切り文字は'motion_ja_delim'オプションで指定可能。
+  (ただし、移動しすぎる場合あり)
+
+* )(での移動時に"。．？！"も文章の終わりとみなすようにします。
+
+オプション:
+   'motion_ja_delim'
+      E,W,Bでの移動時に単語の区切りとみなす文字
+      例:
+        let motion_ja_delim = "、。？！「」『』"
+
+   'plugin_motion_ja_disable'
+      このプラグインを読み込みたくない場合に次のように設定する。
+        let plugin_motion_ja_disable = 1
+
+Note:
+  jvim3からvim6に移行した際、E,W,Bの移動量がe,w,bと同じなのが気になって作成。
+  ただし、文字種までは見ていない簡易なもの。
+
+  以下のmatchit2.vimの方が、漢字コードをもとに文字種も見ているので本格的。
+  http://www.fenix.ne.jp/~G-HAL/soft/nosettle/#vim
